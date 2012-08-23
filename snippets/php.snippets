@@ -101,13 +101,13 @@ snippet doc_s
 # Function
 snippet doc_f
 	/**
-	 * ${4:undocumented function}
+	 * $2
 	 *
-	 * @return ${5:void}
-	 * @author ${6:`g:snips_author`}
-	 **/
-	${1}function ${2}(${3})
-	{${7}
+	 * @return ${4:void}
+	 * @author `g:snips_author`
+	 */
+	${1}function ${2:/* name */}(${3:/* args */}) {
+		${5:/* [todo /] */}
 	}
 # Header
 snippet doc_h
@@ -118,7 +118,7 @@ snippet doc_h
 	 * @version ${3:$Id$}
 	 * @copyright ${4:$2}, `strftime('%d %B, %Y')`
 	 * @package ${5:default}
-	 **/
+	 */
 	
 	/**
 	 * Define DocBlock
@@ -139,11 +139,9 @@ snippet class
 	/**
 	 * ${1}
 	 **/
-	class ${2:ClassName}
-	{
+	class ${2:ClassName} {
 		${3}
-		function ${4:__construct}(${5:argument})
-		{
+		function ${4:__construct}(${5:argument}) {
 			${6:// code...}
 		}
 	}
@@ -154,7 +152,7 @@ snippet def
 snippet def?
 	${1}defined('${2}')${3}
 snippet wh
-	while (${1:/* condition */}) {
+	while(${1:/* condition */}) {
 		${2:// code...}
 	}
 # do ... while
@@ -163,11 +161,11 @@ snippet do
 		${2:// code... }
 	} while (${1:/* condition */});
 snippet if
-	if (${1:/* condition */}) {
+	if( ${1:/* condition */} ) {
 		${2:// code...}
 	}
 snippet ife
-	if (${1:/* condition */}) {
+	if( ${1:/* condition */} ) {
 		${2:// code...}
 	} else {
 		${3:// code...}
@@ -178,14 +176,14 @@ snippet else
 		${1:// code...}
 	}
 snippet elseif
-	elseif (${1:/* condition */}) {
+	elseif ( ${1:/* condition */} ) {
 		${2:// code...}
 	}
 # Tertiary conditional
 snippet t
-	$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
+	$${1:retVal} = ( ${2:condition} ) ? ${3:a} : ${4:b};${5}
 snippet switch
-	switch ($${1:variable}) {
+	switch($${1:variable}) {
 		case '${2:value}':
 			${3:// code...}
 			break;
@@ -203,14 +201,21 @@ snippet for
 		${4: // code...}
 	}
 snippet foreach
-	foreach ($${1:variable} as $${2:key}) {
+	foreach( $${1:variable} as $${2:key} ) {
 		${3:// code...}
 	}
 snippet fun
-	${1:public }function ${2:FunctionName}(${3})
-	{
+	${1:public }function ${2:FunctionName}(${3}) {
 		${4:// code...}
 	}
 # $... = array (...)
 snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
+snippet dash
+	// -----------------------------------------------------
+	// ${1}
+	// -----------------------------------------------------
+snippet pre
+	echo "<pre>";${1}
+snippet dump
+	var_dump( $${1} );${2}

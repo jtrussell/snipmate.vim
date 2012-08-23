@@ -47,6 +47,16 @@ snippet case
 		${2:// code}
 		break;
 	${3}
+# fori (...) {...}
+snippet fori
+	for( i = 0; i < ${1:count}; i${2:++} ) {
+		${3:// body}
+	}
+# forj (...) {...}
+snippet forj
+	for( j = 0; j < ${1:count}; j${2:++} ) {
+		${3:// body}
+	}
 # for (...) {...}
 snippet for
 	for( ${2:i} = 0; $2 < ${1:count}; $2${3:++} ) {
@@ -91,3 +101,5 @@ snippet gett
 # jQuery Select
 snippet jq
 	jQuery( "${1:selector}" )${2:/* do something */}
+snippet log
+	console.log( ${1:"Hello World"} )${2:;}
