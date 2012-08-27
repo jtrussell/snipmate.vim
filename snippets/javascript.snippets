@@ -47,25 +47,15 @@ snippet case
 		${2:// code}
 		break;
 	${3}
-# fori (...) {...}
-snippet fori
-	for( i = 0; i < ${1:count}; i${2:++} ) {
-		${3:// body}
-	}
-# forj (...) {...}
-snippet forj
-	for( j = 0; j < ${1:count}; j${2:++} ) {
-		${3:// body}
-	}
-# for (...) {...}
+# for (...) {...} (Optimised for For-Loop)
 snippet for
-	for( ${2:i} = 0; $2 < ${1:count}; $2${3:++} ) {
-		${4:// body}
+	for( ${1:i} = ${2:/* iterable */}.length; $1--; ) {
+		${3:/* code */}
 	}
 # for (...) {...} (Improved Native For-Loop)
-snippet forr
-	for( ${2:i} = ${1:count} - 1; $2 >= 0; $2${3:--} ) {
-		${4:// body}
+snippet forf
+	for( ${1:i} = 0; $1 < ${2:/* count */}; $1++ ) {
+		${3:/* code */}
 	}
 # while (...) {...}
 snippet wh
