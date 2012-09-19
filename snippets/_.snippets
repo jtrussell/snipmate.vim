@@ -4,7 +4,7 @@
 snippet c)
 	Copyright `&enc[:2] == "utf" ? "©" : "(c)"` `strftime("%Y")` ${1:`g:snips_author`}. All Rights Reserved.${2}
 snippet date
-	`strftime("%Y-%m-%d")`
+	`strftime("%m/%d/%Y")`
 snippet ddate
 	`strftime("%B %d, %Y")`
 snippet imp
@@ -13,3 +13,5 @@ snippet tod
 	[todo] ${1} [/todo]${2}
 snippet rev
 	[review] ${1} [/review]${2}
+snippet ref
+	[refactor] ${1} [/refactor]${2}

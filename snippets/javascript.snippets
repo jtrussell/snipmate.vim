@@ -1,28 +1,28 @@
 # Prototype
 snippet proto
 	${1:class_name}.prototype.${2:method_name} =
-	function(${3:/* arguments */}) {
-		${4:// body...}
-	};
+	function(${4:/*arg*/}) {
+		${5:/*code*/}
+	}${3:;}
 # Function
 snippet fun
-	function ${1:function_name} ( ${2:/* arguments */} ) {
-		${3:// body...}
+	function ${1:function_name} ( ${2:/*args*/} ) {
+		${3:/*code*/}
 	}
 # Closure
 snippet fc
 	(function(${2:that}) {
-		${3:// body}
-	}(${1:this}));
+		${4:/*code*/}
+	}(${1:this}))${3:;}
 # Anonymous Function
 snippet f
-	function(${1:/* arguments */}) {
-		${2:// body}
-	};
+	function(${1:/*args*/}) {
+		${3:/*code*/}
+	}${2:;}
 # if
 snippet if
-	if( ${1:cond} ) {
-		${2:// body}
+	if( ${1:/*condition*/} ) {
+		${2:/*code*/}
 	}
 # if ... else
 snippet ife
@@ -30,53 +30,53 @@ snippet ife
 	else{${3}}
 # tertiary conditional
 snippet t
-	${1:/* condition */} ? ${2:a} : ${3:b}
+	${1:/*condition*/} ? ${2:a} : ${3:b}
 # switch
 snippet switch
-	switch( ${1:expression} ) {
+	switch( ${1:/*expression*/} ) {
 		case '${3:case}':
-			${4:// code}
+			${4:/*code*/}
 			break;
 		${5}
 		default:
-			${2:// code}
+			${2:/*code*/}
 	}
 # case
 snippet case
 	case '${1:case}':
-		${2:// code}
+		${2:/*code*/}
 		break;
 	${3}
 # for (...) {...} (Optimised for For-Loop)
 snippet for
-	for( ${1:i} = ${2:/* iterable */}.length; $1--; ) {
-		${3:/* code */}
+	for( ${1:i} = ${2:/*iterable*/}.length; $1--; ) {
+		${3:/*code*/}
 	}
 # for (...) {...} (Improved Native For-Loop)
 snippet forf
-	for( ${1:i} = 0; $1 < ${2:/* count */}; $1++ ) {
-		${3:/* code */}
+	for( ${1:i} = 0; $1 < ${2:/*count*/}; $1++ ) {
+		${3:/*code*/}
 	}
 # while (...) {...}
 snippet wh
-	while( ${1:/* condition */} ) {
-		${2:/* code */}
+	while( ${1:/*condition*/} ) {
+		${2:/*code*/}
 	}
 # do...while
 snippet do
 	do {
-		${2:/* code */}
-	} while( ${1:/* condition */} );
+		${2:/*code*/}
+	} while( ${1:/*condition*/} );
 # Object Method
 snippet :f
 	${1:method_name}: function(${2:attribute}) {
-		${3: // body}
-	}
+		${4:/*code*/}
+	}${3:,}
 # setTimeout function
 snippet timeout
 	setTimeout(function() {
-		${2: // body}
-	}, ${1:/* wait time */});
+		${2: /*code*/}
+	}, ${1:/*wait*/});
 # Dash line
 snippet dash
 	// -----------------------------------------------------
@@ -84,12 +84,12 @@ snippet dash
 	// -----------------------------------------------------
 # Get Elements
 snippet get
-	getElementsBy${1:TagName}( '${2}' )${3:/* do something */}
+	getElementsBy${1:TagName}( '${2}' )${3:/*code*/}
 # Get Element
 snippet gett
-	getElementBy${1:Id}( '${2}' )${3:/* do something */}
+	getElementBy${1:Id}( '${2}' )${3:/*code*/}
 # jQuery Select
 snippet jq
-	jQuery( "${1:selector}" )${2:/* do something */}
+	jQuery( "${1:selector}" )${2:/*code*/}
 snippet log
 	console.log( ${1:"Hello World"} )${2:;}

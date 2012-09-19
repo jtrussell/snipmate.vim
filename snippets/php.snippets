@@ -14,23 +14,23 @@ snippet req1
 	require_once '${1:file}';${2}
 # $GLOBALS['...']
 snippet globals
-	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
-snippet $_ COOKIE['...']
-	$_COOKIE['${1:variable}']${2}
-snippet $_ ENV['...']
-	$_ENV['${1:variable}']${2}
-snippet $_ FILES['...']
-	$_FILES['${1:variable}']${2}
-snippet $_ Get['...']
-	$_GET['${1:variable}']${2}
-snippet $_ POST['...']
-	$_POST['${1:variable}']${2}
-snippet $_ REQUEST['...']
-	$_REQUEST['${1:variable}']${2}
-snippet $_ SERVER['...']
-	$_SERVER['${1:variable}']${2}
-snippet $_ SESSION['...']
-	$_SESSION['${1:variable}']${2}
+	$GLOBALS[ "${1:variable}" ]${2: = }${3:something}${4:;}${5}
+snippet $_ COOKIE["..."]
+	$_COOKIE[ "${1:variable}" ]${2}
+snippet $_ ENV["..."]
+	$_ENV[ "${1:variable}" ]${2}
+snippet $_ FILES["..."]
+	$_FILES[ "${1:variable}" ]${2}
+snippet $_ Get["..."]
+	$_GET[ "${1:variable}" ]${2}
+snippet $_ POST["..."]
+	$_POST[ "${1:variable}" ]${2}
+snippet $_ REQUEST["..."]
+	$_REQUEST[ "${1:variable}" ]${2}
+snippet $_ SERVER["..."]
+	$_SERVER[ "${1:variable}" ]${2}
+snippet $_ SESSION["..."]
+	$_SESSION[ "${1:variable}" ]${2}
 # Start Docblock
 snippet /*
 	/**
@@ -106,7 +106,7 @@ snippet doc_f
 	 * @return ${4:void}
 	 * @author `g:snips_author`
 	 */
-	${1}function ${2:/* name */}(${3:/* args */}) {
+	${1}function ${2:func}( ${3:/*args*/} ) {
 		${5:/* [todo /] */}
 	}
 # Header
@@ -197,12 +197,12 @@ snippet case
 		${2:// code...}
 		break;${3}
 snippet for
-	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
-		${4: // code...}
+	for ( $${2:i} = count(${1:/*array*/}); $$2--; ) {
+		${4: /*code*/}
 	}
 snippet foreach
 	foreach( $${1:variable} as $${2:key} ) {
-		${3:// code...}
+		${3:/*code*/}
 	}
 snippet fun
 	${1:public }function ${2:FunctionName}(${3}) {
@@ -219,3 +219,34 @@ snippet pre
 	echo "<pre>";${1}
 snippet dump
 	var_dump( $${1} );${2}
+# ------------------------------------
+# Zend
+# ------------------------------------
+snippet zget
+	/**
+	 * @return the $_$1
+	 */
+	public function get%ucf($1)() {
+		return $this->_${1:id};
+	}${2}
+snippet zset
+	/**
+	 * @param ${2:field_type} $_$1
+	 */
+	public function set%ucf($1)($_$1) {
+		$this->_${1:id} = $_$1;
+	}${3}
+snippet zgs
+	/**
+	 * @return the $_$1
+	 */
+	public function get%ucf($1)() {
+		return $this->_${1:id};
+	}
+
+	/**
+	 * @param ${2:field_type} $_$1
+	 */
+	public function set%ucf($1)($_$1) {
+		$this->_$1 = $_$1;
+	}${3}
