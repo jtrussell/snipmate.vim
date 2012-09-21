@@ -219,6 +219,10 @@ snippet pre
 	echo "<pre>";${1}
 snippet dump
 	var_dump( $${1} );${2}
+snippet predump
+	echo "<pre>";
+	var_dump( $${1:/*var*/} );
+	die();
 # ------------------------------------
 # Zend
 # ------------------------------------
