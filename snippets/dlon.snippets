@@ -19,3 +19,16 @@ snippet c
 		"name":     "${1}",
 		"quantity": ${2:1}${3}
 	}${4}
+# block object
+snippet b
+	{
+		"blockName": "${1}",
+		"cards": [${2}]
+	}${3}
+# deck object
+snippet d
+	{
+		"deckName": "${1}",
+		"maindeck": [${2}],
+		"sideboard": [${3}]
+	}${4}
